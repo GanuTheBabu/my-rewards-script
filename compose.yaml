@@ -1,0 +1,15 @@
+services:
+  microsoft-rewards-script:
+    build: .
+    container_name: microsoft-rewards-script
+    restart: unless-stopped
+    volumes:
+      # This links individual files/folders for data storage
+      - ./data/accounts.json:/usr/src/microsoft-rewards-script/dist/accounts.json
+      - ./data/config.json:/usr/src/microsoft-rewards-script/dist/config.json
+      - ./data/sessions:/usr/src/microsoft-rewards-script/dist/browser/sessions
+    environment:
+      - NODE_ENV=production
+      - CRON_SCHEDULE=0 7,15,20 * * *
+      - RUN_ON_START=true
+      - TZ=Asia/Kolkata

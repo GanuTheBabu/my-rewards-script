@@ -1,0 +1,24 @@
+[
+    {
+        "email": "rewardsfarmer_1@outlook.com",
+        "password": "Kalan@9876",
+        "proxy": {
+            "proxyAxios": true,
+            "url": "",
+            "port": 0,
+            "username": "",
+            "password": ""
+        }
+    },
+    {
+        "email": "rewardsfarmer_2@outlook.com",
+        "password": "Kalan@9876",
+        "proxy": {
+            "proxyAxios": true,
+            "url": "",
+            "port": 0,
+            "username": "",
+            "password": ""
+        }
+    }
+]
