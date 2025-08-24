@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
@@ -33,7 +34,8 @@ jobs:
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
-          git add data/sessions/
+          git add dist/browser/sessions/ # This line has been corrected
+          # Check if there are changes to commit
           if ! git diff-index --quiet HEAD; then
             git commit -m "Update session files"
             git push "https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}.git" HEAD:main
